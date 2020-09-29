@@ -13,8 +13,8 @@ def create_combined_list(directory):
 
   return sorted(combined_list, key= lambda x: x[2], reverse = True)
 
-def create_file_from_directory(directory):
-  with open ('combined.txt', 'w+') as newfile:
+def create_file_from_directory(directory, filename):
+  with open (filename + '.txt', 'w+') as newfile:
       for file in create_combined_list(directory):
         newfile.write(f'File name: {file[0]}\n')
         newfile.write(f'Length: {file[1]} string(s)\n')
@@ -22,4 +22,4 @@ def create_file_from_directory(directory):
           newfile.write(string + '\n')
         newfile.write('-------------------\n')
 
-create_file_from_directory('text')
+create_file_from_directory('text', 'mytext')
